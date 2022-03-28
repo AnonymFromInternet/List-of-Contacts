@@ -1,0 +1,12 @@
+<div [@popOverState]="state">
+  <div class="wrapper">
+    <p class="name" style="margin: 0">{{contactData.name}}</p>
+    <p class="number" style="margin: 0">{{contactData.number}}</p>
+    <p class="date" style="margin: 0">{{contactData.date}}</p>
+
+    <div class="buttons">
+      <button class="btn" mat-raised-button>Change</button>
+      <button (click)="id(contactData.id); toggleAnim()" class="btn" mat-raised-button color="warn">Delete</button>
+    </div>
+  </div>
+</div>

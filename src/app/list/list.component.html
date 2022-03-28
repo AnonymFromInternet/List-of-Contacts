@@ -1,0 +1,6 @@
+<div class="list">
+  <h3 *ngIf="contacts.length == 0; else elsePart" class="default-title" >There is no contacts yet. Add one!</h3>
+  <ng-template #elsePart>
+      <app-contact *ngFor="let contact of contacts" [contactData]="contact" (contactId)="deleteContact($event)"></app-contact>
+  </ng-template>
+</div>

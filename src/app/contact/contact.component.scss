@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid red;
+  margin: 33px auto;
+}
+.name {
+  width: 30px;
+  font-weight: bold;
+}
+.number {
+
+}
+.date {
+
+}
+.buttons {
+  .btn {
+    margin: 0 6px;
+  }
+}
