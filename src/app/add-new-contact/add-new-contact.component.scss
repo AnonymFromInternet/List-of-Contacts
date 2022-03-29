@@ -1,0 +1,20 @@
+.add-form-container {
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  border-radius: 15px;
+  border: 1px solid #3E00FF;
+}
+.new-contact-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: small;
+  padding: 0 33px;
+  margin-top: 33px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}

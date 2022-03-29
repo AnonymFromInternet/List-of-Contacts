@@ -1,0 +1,24 @@
+<div class="add-form-container">
+  <h3 style="text-align: center; margin-top: 15px; font-family: 'Inspiration', cursive; font-size: xx-large">Create new contact</h3>
+
+  <div class="new-contact-panel">
+    <mat-form-field class="example-form-field" appearance="fill" color="warn">
+      <mat-label>Enter name</mat-label>
+      <input matInput type="text" [(ngModel)]="name">
+      <button *ngIf="name !=='' " matSuffix mat-icon-button aria-label="Clear" (click)="clearName()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill" color="warn">
+      <mat-label>Enter number</mat-label>
+      <input matInput type="text" [(ngModel)]="number">
+      <button *ngIf="number !== null " matSuffix mat-icon-button aria-label="Clear" (click)="clearNumber()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="button-container">
+    <button mat-stroked-button color="primary" style="color: white; border-color: #3E00FF" (click)="addNewContact()">Add new contact</button>
+  </div>
+</div>
