@@ -21,7 +21,7 @@ import {animate, style, transition, trigger, state} from "@angular/animations";
   ]
 })
 export class ContactComponent {
-  @Input() contactData: Contact = {name: "", number: 0, date: "", id: ""}
+  @Input() contactData: Contact = {name: "", number: "", date: "", id: ""}
   @Output() contactId = new EventEmitter<string>()
 
   id(id: string) {

@@ -11,9 +11,9 @@ import {Contact} from "../../types/Contact";
 
 export class ListComponent {
   contacts: Contact[] = [
-    {id: "Anna", name: "Anna", number: 333, date: new Date().toLocaleDateString()},
-    {id: "Alex", name: "Alex", number: 333, date: new Date().toLocaleDateString()},
-    {id: "Martin", name: "Martin", number: 333, date: new Date().toLocaleDateString()},
+    {id: "Anna", name: "Anna", number: "333", date: new Date().toLocaleDateString()},
+    {id: "Alex", name: "Alex", number: "333", date: new Date().toLocaleDateString()},
+    {id: "Martin", name: "Martin", number: "333", date: new Date().toLocaleDateString()},
   ]
   deleteContact(id: string) {
     this.contacts.forEach(contact => {

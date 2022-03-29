@@ -8,24 +8,27 @@ import {Contact} from "../../types/Contact";
 })
 export class AddNewContactComponent {
   name: string = ""
-  number: number | null = null
+  number: string = ""
+  regexpNumber = /[0-9]/
+
   @Output() newContact = new EventEmitter<Contact>()
 
   clearName() {
     this.name = ""
   }
   clearNumber() {
-    this.number = null
+    this.number = ""
   }
 
   addNewContact() {
-    if (this.name === "" || this.number === null) {
+    if (this.name === "" || this.number === "" || this.number.match(/[a-z]/)) {
       return
     }
+
     let newContact: Contact = {name: this.name, number: this.number, id: this.name, date: new Date().toLocaleDateString()}
     this.newContact.emit(newContact)
 
     this.name = ""
-    this.number = null
+    this.number = ""
   }
 }
