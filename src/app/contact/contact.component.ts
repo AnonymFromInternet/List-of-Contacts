@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-
+import {Component, Input} from '@angular/core';
+import {ItemsArrayService} from "../services/itemsArray.service";
 import {Contact} from "../../types/Contact"
 import {animate, style, transition, trigger, state} from "@angular/animations";
 
@@ -21,12 +21,15 @@ import {animate, style, transition, trigger, state} from "@angular/animations";
   ]
 })
 export class ContactComponent {
-  @Input() contactData: Contact = {name: "", number: "", date: "", id: ""}
-  @Output() contactId = new EventEmitter<string>()
+  constructor(private service: ItemsArrayService) {}
 
-  id(id: string) {
-    this.contactId.emit(id)
+
+  @Input() contactData: Contact = {name: "", number: "", date: "", id: ""}
+
+  deleteContact(id: string) {
+    this.service.deleteContact(id)
   }
+
 
   // Animation Part
   animation = true

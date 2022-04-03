@@ -1,7 +1,8 @@
-import { Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ItemsArrayService} from "../services/itemsArray.service";
+import {Contact} from "../../types/Contact";
 
 // Types Imports
-import {Contact} from "../../types/Contact";
 
 @Component({
   selector: 'app-list',
@@ -9,23 +10,12 @@ import {Contact} from "../../types/Contact";
   styleUrls: ['./list.component.scss']
 })
 
-export class ListComponent {
-  contacts: Contact[] = [
-    {id: "Anna", name: "Anna", number: "333", date: new Date().toLocaleDateString()},
-    {id: "Alex", name: "Alex", number: "333", date: new Date().toLocaleDateString()},
-    {id: "Martin", name: "Martin", number: "333", date: new Date().toLocaleDateString()},
-  ]
-  deleteContact(id: string) {
-    this.contacts.forEach(contact => {
-      if (contact.id === id) {
-        let indexOfContact: number = this.contacts.indexOf(contact)
-        setTimeout(() => {
-          this.contacts.splice(indexOfContact, 1)
-        }, 800)
-      }
-    })
+export class ListComponent implements OnInit{
+  constructor(private service: ItemsArrayService) {}
+  contacts: Contact[] = []
+
+  ngOnInit() {
+    this.contacts = this.service.contacts
   }
-  addContact(contact: Contact) {
-    this.contacts.push(contact)
-  }
+
 }
