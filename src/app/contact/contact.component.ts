@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {ItemsArrayService} from "../services/itemsArray.service";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Contact} from "../../types/Contact"
 import {animate, style, transition, trigger, state} from "@angular/animations";
+import {ContactsArrayService} from "../services/contactsArray.service";
 
 @Component({
   selector: 'app-contact',
@@ -21,13 +21,14 @@ import {animate, style, transition, trigger, state} from "@angular/animations";
   ]
 })
 export class ContactComponent {
-  constructor(private service: ItemsArrayService) {}
-
+  constructor(private contactsArrayService: ContactsArrayService) {}
 
   @Input() contactData: Contact = {name: "", number: "", date: "", id: ""}
+  @Output() contactId = new EventEmitter<string>()
 
   deleteContact(id: string) {
-    this.service.deleteContact(id)
+    this.contactsArrayService.deleteContact(id).subscribe()
+    this.contactId.emit(id)
   }
 
 

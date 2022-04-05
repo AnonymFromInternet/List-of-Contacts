@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Contact} from "../../types/Contact";
-import {ItemsArrayService} from "../services/itemsArray.service";
+import {ContactsArrayService} from "../services/contactsArray.service";
 
 @Component({
   selector: 'app-add-new-contact',
@@ -8,7 +8,9 @@ import {ItemsArrayService} from "../services/itemsArray.service";
   styleUrls: ['./add-new-contact.component.scss']
 })
 export class AddNewContactComponent {
-  constructor(private service: ItemsArrayService) {}
+  constructor(private contactsArrayService: ContactsArrayService) {}
+
+  @Output() newContact = new EventEmitter<Contact>()
 
   name: string = ""
   number: string = ""
@@ -27,9 +29,10 @@ export class AddNewContactComponent {
     }
 
     let newContact: Contact = {name: this.name, number: this.number, id: this.name, date: new Date().toLocaleDateString()}
-    this.service.addContact(newContact)
+    this.contactsArrayService.addNewContact(newContact).subscribe()
 
     this.name = ""
     this.number = ""
+    this.newContact.emit(newContact)
   }
 }

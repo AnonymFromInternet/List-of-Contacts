@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "name": "new item",
+      "number": "3",
+      "id": "new item",
+      "date": "6.4.2022"
+    },
+    {
+      "name": "sddcsd",
+      "number": "3",
+      "id": "sddcsd",
+      "date": "6.4.2022"
+    },
+    {
+      "name": "sfdsfsf",
+      "number": "3",
+      "id": "sfdsfsf",
+      "date": "6.4.2022"
+    },
+    {
+      "name": "sdfcdcd",
+      "number": "3",
+      "id": "sdfcdcd",
+      "date": "6.4.2022"
+    }
+  ]
+}

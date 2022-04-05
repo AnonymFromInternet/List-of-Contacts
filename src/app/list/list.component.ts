@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemsArrayService} from "../services/itemsArray.service";
 import {Contact} from "../../types/Contact";
+import {ContactsArrayService} from "../services/contactsArray.service";
 
-// Types Imports
+
 
 @Component({
   selector: 'app-list',
@@ -10,12 +10,24 @@ import {Contact} from "../../types/Contact";
   styleUrls: ['./list.component.scss']
 })
 
-export class ListComponent implements OnInit{
-  constructor(private service: ItemsArrayService) {}
+export class ListComponent implements OnInit {
+  constructor(private contactsService: ContactsArrayService) {}
+
   contacts: Contact[] = []
 
-  ngOnInit() {
-    this.contacts = this.service.contacts
+  deleteContact(id: string) {
+    setTimeout(() => {
+      this.contacts = this.contacts.filter(element => element.id !== id)
+    }, 600)
   }
 
+  addContact(newContact: Contact) {
+    this.contacts.push(newContact)
+  }
+
+  ngOnInit() {
+    this.contactsService.getAllContacts().subscribe(contacts => {
+      this.contacts = contacts
+    })
+  }
 }

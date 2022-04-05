@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {ItemsArrayService} from "./services/itemsArray.service"
+import {ContactsArrayService} from "./services/contactsArray.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ItemsArrayService]
+  providers: [ContactsArrayService]
 })
 export class AppComponent {
   title = 'list-of-contacts';

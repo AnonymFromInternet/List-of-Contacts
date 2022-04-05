@@ -20,6 +20,6 @@
     </mat-form-field>
   </div>
   <div class="button-container">
-    <button mat-stroked-button color="primary" style="color: white; border-color: #3E00FF" (click)="addNewContact()">Add new contact</button>
+    <button [disabled]="name==='' || number==='' || !number.match(regexpNumber)" mat-stroked-button color="primary" style="color: white; border-color: #3E00FF" (click)="addNewContact()">Add new contact</button>
   </div>
 </div>
