@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {ContactsArrayService} from "./services/contactsArray.service";
+import {AuthService} from "./services/auth-service";
+import {AuthGuard} from "./services/auth-guard.service";
 
 @Component({
   selector: 'app-root',

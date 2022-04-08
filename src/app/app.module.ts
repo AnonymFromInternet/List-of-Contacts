@@ -18,6 +18,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { PageNotExistComponent } from './page-not-exist/page-not-exist.component';
 import {RouterModule, Routes} from "@angular/router";
 import {RoutingModule} from "./customModules/routing.module";
+import {AuthGuard} from "./services/auth-guard.service";
+import {AuthService} from "./services/auth-service";
 
 
 @NgModule({
@@ -41,7 +43,7 @@ import {RoutingModule} from "./customModules/routing.module";
     HttpClientModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
