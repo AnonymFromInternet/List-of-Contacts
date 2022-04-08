@@ -14,6 +14,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
+import { LoginPageComponent } from './login-page/login-page.component';
+import { PageNotExistComponent } from './page-not-exist/page-not-exist.component';
+import {RouterModule, Routes} from "@angular/router";
+import {RoutingModule} from "./customModules/routing.module";
+
 
 @NgModule({
   declarations: [
@@ -21,18 +26,20 @@ import {HttpClientModule} from "@angular/common/http";
     ListComponent,
     ButtonsComponent,
     ContactComponent,
-    AddNewContactComponent
+    AddNewContactComponent,
+    LoginPageComponent,
+    PageNotExistComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

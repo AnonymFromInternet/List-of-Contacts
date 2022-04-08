@@ -1,28 +1,22 @@
 {
   "contacts": [
     {
-      "name": "new item",
-      "number": "3",
-      "id": "new item",
-      "date": "6.4.2022"
-    },
-    {
-      "name": "sddcsd",
-      "number": "3",
-      "id": "sddcsd",
-      "date": "6.4.2022"
-    },
-    {
       "name": "sfdsfsf",
       "number": "3",
       "id": "sfdsfsf",
       "date": "6.4.2022"
     },
     {
-      "name": "sdfcdcd",
+      "name": "dgeg",
       "number": "3",
-      "id": "sdfcdcd",
-      "date": "6.4.2022"
+      "id": "dgeg",
+      "date": "8.4.2022"
+    },
+    {
+      "name": "new item",
+      "number": "3",
+      "id": "new item",
+      "date": "8.4.2022"
     }
   ]
 }

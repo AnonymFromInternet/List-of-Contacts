@@ -2,12 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {Contact} from "../../types/Contact";
 import {ContactsArrayService} from "../services/contactsArray.service";
 
-
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 
 export class ListComponent implements OnInit {
@@ -22,7 +20,7 @@ export class ListComponent implements OnInit {
   }
 
   addContact(newContact: Contact) {
-    this.contacts.push(newContact)
+      this.contacts.push(newContact)
   }
 
   ngOnInit() {
